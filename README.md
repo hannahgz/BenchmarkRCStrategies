@@ -1,7 +1,7 @@
 # Benchmarking Reverse-Complement Strategies for Deep Learning Models in Genomics 
 
 ## Code snippets for converting trained models to post-training conjoined models
-### Simulated Models 
+### Simulated and Binary Prediction Models 
 
 ```python
 model = load_model('model_name')
@@ -18,24 +18,6 @@ sigmoid_out = keras.layers.Activation("sigmoid")(average_logits)
 siamese_model = keras.models.Model(inputs=[fwd_sequence_input],
                                            outputs=[sigmoid_out])
 ```
-
-### Binary Prediction Models
-
-```python
-model = load_model('model_name')
-binary_model_get_out = keras.models.Model(inputs=model.inputs,
-                                        outputs=model.layers[-1].output)
-
-fwd_sequence_input = keras.layers.Input(shape=('seq_len', 4))
-rev_sequence_input = keras.layers.Lambda(function=lambda x: x[:,::-1,::-1])(fwd_sequence_input)
-fwd_output = binary_model_get_out(fwd_sequence_input)
-rev_output = binary_model_get_out(rev_sequence_input)
-average_out = keras.layers.Average()([fwd_output, rev_output])
-
-siamese_model = keras.models.Model(inputs=[fwd_sequence_input],
-                                   outputs=[average_out])
-```
-
 
 ### Profile Prediction Models
 
