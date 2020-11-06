@@ -1,5 +1,7 @@
 # Benchmarking Reverse-Complement Strategies for Deep Learning Models in Genomics 
 
+Link to BiorXiv preprint: https://www.biorxiv.org/content/10.1101/2020.11.04.368803v1
+
 ## Important Notes 
 * Keras 2.2.4 was used to train all models. Keras 2.3 has a bug where the validation set loss is not computed correctly. More information here: https://github.com/keras-team/keras/issues/13389
 * Typical BPNet architectures have both a profile prediction head and a total-counts prediction head, but here we benchmarked on only the profile prediction head (equivalent to setting the weight for the total-counts prediction head to zero). 
