@@ -1,6 +1,6 @@
 # Benchmarking Reverse-Complement Strategies for Deep Learning Models in Genomics 
 
-Link to BiorXiv preprint: https://www.biorxiv.org/content/10.1101/2020.11.04.368803v1
+Link to BiorXiv preprint: https://www.biorxiv.org/content/10.1101/2020.11.04.368803v1 - NOTE: while the implementation of the reverse complement equivariance is correct in the code, we realized too late that the description in the paper incorrectly states that the bias track is flipped in the profile models. See this twitter thread for the discussion: https://x.com/whispsofviolet/status/1770287541394219129?t=XbKgUQxbRUZkFSU00sNMUw
 
 The simulated data are available at https://zenodo.org/record/4475052#.YBl4RHdKg8M
 
